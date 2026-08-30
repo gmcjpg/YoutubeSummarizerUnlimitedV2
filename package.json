@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "playwright": "^1.59.1"
+  },
+  "name": "youtubesummarizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "node tests/e2e.js",
+    "test:real:setup": "node tests/real-session.js",
+    "test:real": "node tests/real-transcript.js",
+    "test:real:spa": "node tests/real-spa.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

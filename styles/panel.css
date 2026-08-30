@@ -1,0 +1,309 @@
+/* ─────────────────────────────────────────────────────
+   YouTube AI Summarizer – injected panel styles
+   Follows YouTube's own CSS variable naming where possible.
+   ───────────────────────────────────────────────────── */
+
+#yt-ai-summarizer {
+  --yts-bg:        #fff;
+  --yts-bg2:       #f2f2f2;
+  --yts-border:    #e0e0e0;
+  --yts-text:      #0f0f0f;
+  --yts-text2:     #606060;
+  --yts-accent:    #dc2626;
+  --yts-accent-h:  #b91c1c;
+  --yts-btn2-bg:   #f0f0f0;
+  --yts-btn2-h:    #e0e0e0;
+  --yts-tab-active:#dc2626;
+  --yts-radius:    8px;
+  --yts-font:      'Roboto', Arial, sans-serif;
+
+  width: 100%;
+  background: var(--yts-bg);
+  border: 1px solid var(--yts-border);
+  border-radius: var(--yts-radius);
+  font-family: var(--yts-font);
+  font-size: 13px;
+  color: var(--yts-text);
+  margin-bottom: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Dark mode (YouTube sets [dark] on <html>) */
+html[dark] #yt-ai-summarizer {
+  --yts-bg:       #212121;
+  --yts-bg2:      #2a2a2a;
+  --yts-border:   #3a3a3a;
+  --yts-text:     #f1f1f1;
+  --yts-text2:    #aaa;
+  --yts-btn2-bg:  #2a2a2a;
+  --yts-btn2-h:   #383838;
+}
+
+/* ── Header ─────────────────────────────────── */
+.yts-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--yts-bg2);
+  border-bottom: 1px solid var(--yts-border);
+  cursor: default;
+  user-select: none;
+}
+
+.yts-logo {
+  display: flex;
+  align-items: center;
+  color: var(--yts-accent);
+  flex-shrink: 0;
+}
+
+.yts-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--yts-text);
+  letter-spacing: 0.01em;
+}
+
+.yts-collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--yts-text2);
+  font-size: 11px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  line-height: 1;
+}
+.yts-collapse-btn:hover { background: var(--yts-btn2-bg); color: var(--yts-text); }
+
+/* ── Body ────────────────────────────────────── */
+.yts-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Utility rows ─────────────────────────────── */
+.yts-row {
+  display: flex;
+  gap: 6px;
+}
+.yts-row.yts-spaced {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Mode tabs ────────────────────────────────── */
+.yts-tab {
+  flex: 1;
+  background: var(--yts-btn2-bg);
+  border: 1px solid var(--yts-border);
+  border-radius: 20px;
+  color: var(--yts-text2);
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--yts-font);
+  font-weight: 500;
+  padding: 5px 0;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.yts-tab:hover { background: var(--yts-btn2-h); color: var(--yts-text); }
+.yts-tab.active {
+  background: var(--yts-tab-active);
+  border-color: var(--yts-tab-active);
+  color: #fff;
+}
+
+/* ── Q&A textarea ─────────────────────────────── */
+.yts-qa-section { }
+.yts-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--yts-border);
+  border-radius: 6px;
+  background: var(--yts-bg);
+  color: var(--yts-text);
+  font-family: var(--yts-font);
+  font-size: 12px;
+  padding: 7px 9px;
+  resize: vertical;
+  min-height: 56px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.yts-textarea:focus { border-color: var(--yts-accent); }
+
+/* ── Labels & selects ────────────────────────── */
+.yts-label {
+  font-size: 11px;
+  color: var(--yts-text2);
+  white-space: nowrap;
+}
+.yts-select {
+  background: var(--yts-bg);
+  border: 1px solid var(--yts-border);
+  border-radius: 6px;
+  color: var(--yts-text);
+  font-family: var(--yts-font);
+  font-size: 12px;
+  padding: 4px 6px;
+  outline: none;
+  cursor: pointer;
+  max-width: 160px;
+}
+.yts-select:focus { border-color: var(--yts-accent); }
+
+/* ── Provider pills ───────────────────────────── */
+.yts-providers {
+  display: flex;
+  gap: 6px;
+}
+.yts-provider {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--yts-btn2-bg);
+  border: 1px solid var(--yts-border);
+  border-radius: 20px;
+  color: var(--yts-text2);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: var(--yts-font);
+  font-weight: 500;
+  padding: 5px 4px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.yts-provider:hover { background: var(--yts-btn2-h); color: var(--yts-text); }
+.yts-provider.active {
+  border-color: var(--yts-accent);
+  color: var(--yts-accent);
+  background: var(--yts-bg);
+}
+html[dark] .yts-provider.active { background: var(--yts-bg2); }
+
+.yts-provider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Buttons ──────────────────────────────────── */
+.yts-btn-primary {
+  width: 100%;
+  background: var(--yts-accent);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--yts-font);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: background 0.15s, opacity 0.15s;
+  letter-spacing: 0.01em;
+}
+.yts-btn-primary:hover   { background: var(--yts-accent-h); }
+.yts-btn-primary:disabled { opacity: 0.55; cursor: default; }
+
+.yts-btn-secondary {
+  width: 100%;
+  background: var(--yts-btn2-bg);
+  border: 1px solid var(--yts-border);
+  border-radius: 20px;
+  color: var(--yts-text2);
+  cursor: pointer;
+  font-family: var(--yts-font);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 0;
+  transition: background 0.15s, color 0.15s;
+}
+.yts-btn-secondary:hover   { background: var(--yts-btn2-h); color: var(--yts-text); }
+.yts-btn-secondary:disabled { opacity: 0.55; cursor: default; }
+
+.yts-text-btn {
+  background: none;
+  border: none;
+  color: var(--yts-accent);
+  cursor: pointer;
+  font-family: var(--yts-font);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0;
+}
+.yts-text-btn:hover { text-decoration: underline; }
+
+/* ── Status message ───────────────────────────── */
+.yts-status {
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  line-height: 1.4;
+}
+.yts-status--info  { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+.yts-status--ok    { background: #f0fdf4; border-color: #bbf7d0; color: #15803d; }
+.yts-status--error { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+html[dark] .yts-status--info  { background: #1e3a5f; border-color: #2563eb; color: #93c5fd; }
+html[dark] .yts-status--ok    { background: #14532d; border-color: #16a34a; color: #86efac; }
+html[dark] .yts-status--error { background: #450a0a; border-color: #dc2626; color: #fca5a5; }
+
+/* ── Transcript viewer ────────────────────────── */
+.yts-transcript-wrap {
+  border-top: 1px solid var(--yts-border);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.yts-transcript-list {
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 2px;
+}
+
+.yts-transcript-list::-webkit-scrollbar      { width: 4px; }
+.yts-transcript-list::-webkit-scrollbar-track { background: transparent; }
+.yts-transcript-list::-webkit-scrollbar-thumb { background: var(--yts-border); border-radius: 4px; }
+
+.yts-ts-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 3px 0;
+}
+
+.yts-ts-time {
+  background: none;
+  border: none;
+  color: var(--yts-accent);
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace, var(--yts-font);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: 36px;
+  text-align: right;
+}
+.yts-ts-time:hover { text-decoration: underline; }
+
+.yts-ts-text {
+  font-size: 12px;
+  color: var(--yts-text2);
+  line-height: 1.45;
+}

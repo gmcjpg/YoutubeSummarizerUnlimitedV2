@@ -1,0 +1,14 @@
+{
+  "_comment": "Allow-list of manifest.json permissions/host_permissions. The manifest-guard CI job fails if manifest.json requests anything beyond this list. Update this file in the same PR when intentionally adding a new permission.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://claude.ai/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*"
+  ]
+}

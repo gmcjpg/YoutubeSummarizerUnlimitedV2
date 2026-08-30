@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Playwright test artifacts
+tests/.chrome-profile/
+tests/.real-chrome-profile/
+tests/.real-playwright-profile/
+test-results/
+playwright-report/
+
+# Build / pack output
+*.zip
+*.crx
+*.pem
+
+# Debug scripts
+debug-*.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+/.claude
